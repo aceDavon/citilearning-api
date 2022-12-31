@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('subscription_user', function (Blueprint $table) {
             $table->id();
-            $table->string('serial_no');
-            $table->string('status');
-            $table->dateTime('billing_date');
+            $table->integer('user_id');
+            $table->integer('subscription_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('subscription_user');
     }
 };

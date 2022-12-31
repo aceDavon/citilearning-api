@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
+use App\Http\Resources\V1\Invoice\InvoiceResource;
 use App\Models\Invoice;
 
 class InvoiceController extends Controller
@@ -16,7 +17,11 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoices =Invoice::all();
+
+        if(count($invoices)) return new InvoiceResource($invoices);
+
+        return $invoices;
     }
 
     /**

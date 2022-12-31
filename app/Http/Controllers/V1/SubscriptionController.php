@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubscriptionRequest;
 use App\Http\Requests\UpdateSubscriptionRequest;
+use App\Http\Resources\V1\Subscription\SubscriptionResource;
 use App\Models\Subscription;
 
 class SubscriptionController extends Controller
@@ -16,7 +17,11 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        //
+        $subscriptions = Subscription::all();
+
+        if(count($subscriptions)) return new SubscriptionResource($subscriptions);
+
+        return $subscriptions;
     }
 
     /**

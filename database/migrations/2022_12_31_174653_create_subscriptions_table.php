@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('amount');
+            $table->integer('duration');
+            $table->integer('invoice_id');
             $table->timestamps();
         });
     }

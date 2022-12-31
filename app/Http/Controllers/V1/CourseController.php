@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use App\Http\Resources\V1\Course\CourseResource;
 use App\Models\Course;
 
 class CourseController extends Controller
@@ -16,7 +17,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all();
+
+        if(count($courses)) return new CourseResource($courses);
+
+        return $courses;
     }
 
     /**
