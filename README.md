@@ -73,10 +73,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 - Twitter: [@shakleshevon](https://twitter.com/sharkleshevon)
 - LinkedIn: [Makoji David](https://www.linkedin.com/in/makoji-david/)
 
-👤 **Milen Alebel**
-
-- GitHub: [@milen-ale](https://github.com/milen-ale)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
