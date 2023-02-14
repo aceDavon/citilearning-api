@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\V1\CourseController;
 use App\Http\Controllers\V1\InvoiceController;
 use App\Http\Controllers\V1\SubscriptionController;
@@ -28,3 +29,4 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     Route::apiResource('/subscriptions', SubscriptionController::class);
     Route::apiResource('/courses', CourseController::class);
 })->middleware('api');
+Route::post('/users/login', [UserController::class, 'login']);
